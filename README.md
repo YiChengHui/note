@@ -27,7 +27,7 @@
 
 -   解决办法：
 
-    -   改变盒子模型为block，比如浮动(float)，或者定位(position)
+    -   直接改变盒子模型为block，或者使用其他间接改变盒子模型的方法，比如浮动(float)，或者定位(position)
 
 ## <center>  阻止鼠标滚轮滚动
 ```javascript
