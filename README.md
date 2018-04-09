@@ -60,7 +60,7 @@ animation-fill-mode: forwards;
 -   所以transionend会无效，需要用animationend监听
     代码示例:
     
-     -   原生JavaScript
+    -   原生JavaScript
     ```javascript
     domObj.addEventListener('animationend',doSometing ())
     ```
