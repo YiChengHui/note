@@ -51,15 +51,23 @@ white-space: nowrap;
 
 ## <center> ```animationend```和```transionend```
 
-在使用transionend监听动画完成事件是，发现无效，因为用了animated.css，而animated用的是
+-   在使用transionend监听动画完成事件是，发现无效，因为用了animated.css，而animated.css用的是
 ```css
 animation-name: slideTop;
 animation-duration: 0.5s;
 animation-fill-mode: forwards;
 ```
-所以transionend会无效，需要用animationend监听
-
-完成了动画效果，但是有bug待修复，完成了日期选择
+-   所以transionend会无效，需要用animationend监听
+    代码示例:
+     -   原生JavaScript
+    ```javascript
+    domObj.addEventListener('animationend',doSometing ())
+    ```
+    
+    -   jQuery
+    ```javascript
+     .on('animationend', '.CostList', doSometing ())
+    ```   
 
 ## axios表单提交方法
 
