@@ -59,6 +59,7 @@ animation-fill-mode: forwards;
 ```
 -   所以transionend会无效，需要用animationend监听
     代码示例:
+    
      -   原生JavaScript
     ```javascript
     domObj.addEventListener('animationend',doSometing ())
@@ -69,7 +70,7 @@ animation-fill-mode: forwards;
      .on('animationend', '.CostList', doSometing ())
     ```   
 
-## axios表单提交方法
+## <center> axios表单提交方法
 
 -   使用vue的ajax框架中，发现同样的post数据，vue-resource拿到的数据是正确的，axios则不正确
 -   对比了这两个ajax框架的所有数据，发现vue-resource发送的是formdata（表单）数据格式，axios则是普通的json
