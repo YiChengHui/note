@@ -159,3 +159,95 @@ this.$axios({
         */
     });
     ```        
+## <center> php操作mysql
+-   创建连接
+```php
+$conn = new mysqli('servername','username', 'password','userInfo');
+if ($conn->connect_error) {
+    die("连接失败: " . $conn->connect_error);
+} 
+```
+
+
+-   数据库创建
+```php
+$sql = "CREATE DATABASE userInfo";
+    if ($conn->query($sql) === TRUE) {
+        echo "数据库创建成功";
+    } else {        
+        echo "Error creating database: " . $conn->error;
+    }
+```
+
+-   使用 sql 创建数据表
+```php
+$sql = "CREATE TABLE MyGuests (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+    firstname VARCHAR(30) NOT NULL,
+    lastname VARCHAR(30) NOT NULL,
+    email VARCHAR(50),
+    reg_date TIMESTAMP
+)";    
+if ($conn->query($sql) === TRUE) {
+    echo "Table MyGuests created successfully";
+} else {
+    echo "创建数据表错误: " . $conn->error;
+}
+```
+
+-   插入数据
+```php
+    $sql = "INSERT INTO MyGuests (firstname, lastname, email)
+    VALUES ('John', 'Doe', 'john@example.com');";
+    $sql .= "INSERT INTO MyGuests (firstname, lastname, email)
+    VALUES ('Mary', 'Moe', 'mary@example.com');";
+    $sql = "INSERT INTO MyGuests (firstname, lastname, email)
+    VALUES ('one', 'two', 'three@example.com')";
+```
+-   查询数据
+    -   语法
+    ```
+    SELECT column_name(s) FROM table_name WHERE column_name operator value
+    ```
+    -   示例代码：
+    ```php
+    $sql = "SELECT id, firstname, lastname FROM MyGuests";
+    $result = $conn->query($sql);    
+    if ($result->num_rows > 0) {
+            // 输出数据
+        while($row = $result->fetch_assoc()) {
+            echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]."<br>";
+        }
+    } else {
+        echo "0 结果";
+    }
+    ```
+   
+-   删除数据
+
+```php
+    $con=mysqli_connect($servername, $username, $password,'userInfo');
+    // 检测连接
+    if (mysqli_connect_errno())
+    {
+        echo "连接失败: " . mysqli_connect_error();
+    }
+
+    mysqli_query($con,"DELETE FROM MyGuests WHERE LastName='yyyyyy'");
+```    
+
+-   修改数据
+    -   语法
+    ```php
+    UPDATE table_name SET column1=value,  column2=value2,... WHERE some_column=some_value
+    ```
+    -   示例代码：
+    ```php
+    mysqli_query($con,"UPDATE MyGuests SET lastname='hhhhhhh' WHERE firstname='Julie' AND lastname='Doe'");
+
+    // mysqli_query($con,"UPDATE MyGuests SET lastname='Doe' WHERE firstname='Julie'");
+    ```    
+-   关闭连接
+```php
+mysqli_close($con);
+```
