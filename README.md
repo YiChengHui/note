@@ -261,3 +261,47 @@ mysqli_close($con);
     domObj.checked
     ```
 -   返回值： 均为boolean值(true|false)
+## <center> ES6 Promise
+-   一个 Promise 就是一个代表了异步操作最终完成或者失败的对象。大多数人都在使用由其他函数创建并返回的promise
+
+-   本质上，一个promise是某个函数返回的对象，你可以把回调函数绑定在这个对象上，而不是把回调函数当作参数传进函数。 
+
+-   一个最简单的Promise例子：生成一个0-2之间的随机数，如果小于1，则等待一段时间后返回成功，否则返回失败：
+
+    -   异步方法
+    ```javascript
+    function test(resolve, reject) {
+        var timeOut = Math.random() * 2;
+        log('set timeout to: ' + timeOut + ' seconds.');
+        setTimeout(function () {
+            if (timeOut < 1) {
+                log('call resolve()...');
+                resolve('200 OK');
+            }
+            else {
+                log('call reject()...');
+                reject('timeout in ' + timeOut + ' seconds.');
+            }
+        }, timeOut * 1000);
+    }
+    ```
+    -   Promise
+    ```javascript
+    var p1 = new Promise(test);
+    var p2 = p1.then(function (result) {
+        console.log('成功：' + result);
+    });
+    var p3 = p2.catch(function (reason) {
+        console.log('失败：' + reason);
+    });
+
+    /*上面代码简写如下*/
+    new Promise(test).then(function (result) {
+    console.log('成功：' + result);
+    }).catch(function (reason) {
+        console.log('失败：' + reason);
+    });
+    ```
+-    参考链接
+    -   <a href='http://dwz.cn/6GpQWl'>廖雪峰Promise</a>
+    -   <a href='https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Using_promises'>MDN Promise</a>   
