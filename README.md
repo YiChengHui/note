@@ -303,6 +303,5 @@ mysqli_close($con);
     });
     ```
 -   参考链接
-
-    -   <a href='http://dwz.cn/6GpQWl'>廖雪峰Promise</a>    
-    -   <a href='https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Using_promises'>MDN Promise</a>   
+    -   廖雪峰Promise:```https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014345008539155e93fc16046d4bb7854943814c4f9dc2000```
+    -   MDN Promise:```https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Using_promises``` 
