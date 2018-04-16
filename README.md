@@ -251,3 +251,13 @@ if ($conn->query($sql) === TRUE) {
 ```php
 mysqli_close($con);
 ```
+## <center> input标签checked选中
+-   jquery
+    ```javascript
+    $('.checkbox input').prop('checked')
+    ```
+-   原生JavaScript
+    ```javascript
+    domObj.checked
+    ```
+-   返回值： 均为boolean值(true|false)
