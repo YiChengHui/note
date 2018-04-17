@@ -261,6 +261,11 @@ mysqli_close($con);
     domObj.checked
     ```
 -   返回值： 均为boolean值(true|false)
+
+-   注意，只要标签中有checked属性，那么这个input就会被选中:
+    ```javascript
+    <input type='checked' checked>
+    ```    
 ## <center> ES6 Promise
 -   一个 Promise 就是一个代表了异步操作最终完成或者失败的对象。大多数人都在使用由其他函数创建并返回的promise
 
