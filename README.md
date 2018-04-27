@@ -310,3 +310,41 @@ mysqli_close($con);
 -   参考链接
     -   廖雪峰Promise:```https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014345008539155e93fc16046d4bb7854943814c4f9dc2000```
     -   MDN Promise:```https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Using_promises``` 
+    
+##  史上最简单的css3 loading
+-   html结构
+```html
+<div class="lodingMore">
+    <span>加载中</span>
+    <span class="test">·······</span>
+</div>
+```
+-   css代码
+```css
+.lodingMore{
+    width: 100%;
+    height: 30px;
+    text-align: center;
+}
+span{
+    width: 50%;
+    float: left;
+    text-align: right;
+    line-height: 30px;
+}
+.test{
+    text-align: left;
+    width: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    animation: infinity 2s infinite;
+}
+@keyframes infinity{
+    from{
+        width: 0px;
+    }
+    to{
+        width:30px;
+    }
+}
+```    
