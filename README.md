@@ -348,3 +348,12 @@ span{
     }
 }
 ```    
+## 计算两个日期之间的每个日期
+```javascript
+var a=new Date("2018-12-1");
+    var b=new Date("2019-3-1");
+    var c=(b-a)/1000/60/60/24;
+    for (var i = 0; i < c+1; i++) {
+        console.log(new Date(Date.parse(a)+1000*60*60*24*i));
+    }
+```
