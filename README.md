@@ -357,3 +357,13 @@ var a=new Date("2018-12-1");
         console.log(new Date(Date.parse(a)+1000*60*60*24*i));
     }
 ```
+## blob预览已选图片
+```html
+<input type="file" onchange="upload(event)">
+```
+```javascript
+    function upload(event){
+        var URL = window.URL || window.webkitURL;
+        console.log(URL.createObjectURL(event.target.files[0]));
+    }    
+```
