@@ -358,12 +358,14 @@ var a=new Date("2018-12-1");
     }
 ```
 ## blob预览已选图片
+-   html部分
 ```html
 <input type="file" onchange="upload(event)">
 ```
+-   js部分
 ```javascript
-    function upload(event){
-        var URL = window.URL || window.webkitURL;
-        console.log(URL.createObjectURL(event.target.files[0]));
-    }    
+function upload(event){
+    var URL = window.URL || window.webkitURL;
+    console.log(URL.createObjectURL(event.target.files[0]));
+}    
 ```
